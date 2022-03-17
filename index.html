@@ -6,32 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Random Pet Facts</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <section class="hero is-info">
-        <h1 class="title has-text-grey-dark">Random Pet Facts</h1>
+        <h1 class="title has-text-white" id="header">Learn Random Pet Facts!</h1>
     </section>
     <section class="menu columns">
         <div class="column is-one-quarter search__space">
-            <div class="search__bar">
-                <input type="search" placeholder="Pet Type (Dog Or Cat)" class="input is-link pet-search-box" </div>
-                <button type="button" class="btn btn-primary">Search</button>
+            <div class="card">
+                <div class="card-header">  
+                    <h2 class="card-header-title">Please Choose Dog or Cat</h2>
+                </div>
+                <div class="card-content"> 
+                    <button id="cat-button" class="button is-info is-large column is-centered">Cat</button>
+                    <button id="dog-button" class="button is-success is-large column is-centered">Dog</button>
+                </div>
             </div>
-            <div class="form-group">
-                <p class="search__history column is-centered">Hello</p>
-                <p class="search__history column is-centered">Hello</p>
-                <p class="search__history column is-centered">Hello</p>
+            <div class="form-group" id="search-list">
+                <p class="search__history column is-centered"></p>
+                <p class="search__history column is-centered"></p>
+                <p class="search__history column is-centered"></p>
             </div>
         </div>
         <div class="results">
             <div class="column search__image">
-                <img src="run-buddy/assets/images/trainer-3.jpg" alt="pet-image" class="pet-image">
+                <img class="pet-image"></img>
             </div>
             <div class="is-warning facts-result">
-                <p class="text-result">lorem ipsum dolor sit amet, consectetlorem ipsum dolor sit amet, consectetlorem ipsum dolor sit amet, consectetlorem ipsum dolor sit amet, consectetlorem ipsum dolor sit amet, consectetlorem ipsum dolor sit amet, consectetlorem ipsum dolor
-                    sit amet, consectetlorem ipsum dolor sit amet, consectetlorem ipsum dolor sit amet, consectet</p>
+                <p class="random-fact"></p>
             </div>
         </div>
     </section>
