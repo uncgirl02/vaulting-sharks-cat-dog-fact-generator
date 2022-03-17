@@ -3,14 +3,15 @@ var petPicture = document.querySelector(".pet-image");
 var factContainer = document.querySelector(".random-fact")
 var catButton = document.querySelector("#cat-button")
 var dogButton = document.querySelector("#dog-button")
+var searchHistory = document.querySelector("#search-list")
 
 //function when cat button run fuctions
 var catButtonClick = function(event) {
     event.preventDefault();
     getCatFact();
     getCatPicture();
-    // petList();
-    // savePet();
+    catList();
+    // saveCat();
 }
 
 //fetch the cat fact
@@ -50,15 +51,21 @@ var displayCatPicture = function(picture) {
 
 
 
-// // display "You picked cat!"
-// var petList = function () {
-// petArray =
-// }
+// display "You picked cat!"
+var catList = function () {
+    var buttonName = document.createElement("p");
+    buttonName.innerText = "You learned a cat fact!";
+    buttonName.className = "cat-search-history"
+    searchHistory.appendChild(buttonName);
+}
 
-// //and save to local storage
-// var savePet = function {
-
-// }
+//and save to local storage
+var saveCat = function () {
+        petArray = JSON.parse(localStorage.getItem("petArray")) || []
+        console.log(petArray);
+        petArray.push(buttonName);
+        localStorage.setItem("buttonName", JSON.stringify(petArray));
+}
 
 
 //function when dog button is pressed random picture and fact is displayed
@@ -66,14 +73,23 @@ var dogButtonClick = function(event) {
     event.preventDefault();
     getDogFact();
     getDogPicture();
-    // petList();
+    dogList();
     // savePet();
 }
+
+// display "You picked dog!"
+var dogList = function () {
+    var dogButtonName = document.createElement("p");
+    dogButtonName.innerText = "You learned a dog fact!";
+    dogButtonName.className = "dog-search-history";
+    searchHistory.appendChild(dogButtonName);
+}
+
 
 //fetch the dog fact
 var getDogFact = function() {
     
-    var dogFactUrl = "https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1";
+    var dogFactUrl = "https://dog-api.kinduff.com/api/facts?number=1";
 
     fetch(dogFactUrl).then(function (response) {
         response.json().then(function (data) {
@@ -84,7 +100,7 @@ var getDogFact = function() {
 
 //function to display dog fact
 var displayDogFact = function(data) {
-    factContainer.innerText = data.fact;
+    factContainer.innerText = data.facts[0];
 }
     
 //fetch the dog picture
