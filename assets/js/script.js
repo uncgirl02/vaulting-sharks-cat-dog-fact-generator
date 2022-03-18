@@ -38,7 +38,6 @@ var getCatFact = function() {
     fetch(catPictureUrl).then(function (response) {
         response.json().then(function (data) {
           displayCatPicture(data);
-          console.log(data);
         });
     });
 }
@@ -48,8 +47,6 @@ var displayCatPicture = function(picture) {
     var apiPicUrl = picture[0].url
     petPicture.setAttribute("src", apiPicUrl)
 }
-
-
 
 // display "You picked cat!"
 var catList = function () {
@@ -61,9 +58,9 @@ var catList = function () {
 
 //and save to local storage
 var saveCat = function () {
-        petArray = JSON.parse(localStorage.getItem("petArray")) || []
+        petArray = JSON.parse(localStorage.getItem("buttonName")) || []
         console.log(petArray);
-        petArray.push(buttonName);
+        petArray.push(buttonName.innerText);
         localStorage.setItem("buttonName", JSON.stringify(petArray));
 }
 
@@ -110,7 +107,6 @@ var getDogPicture = function() {
     fetch(dogPictureUrl).then(function (response) {
         response.json().then(function (data) {
           displayDogPicture(data);
-          console.log(data);
         });
     });
 }

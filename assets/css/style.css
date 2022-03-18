@@ -4,6 +4,7 @@
     margin: 0;
 }
 
+/* Header Syling */
 .title {
     font-size: 7rem;
     display: flex;
@@ -11,24 +12,22 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    width: 100%;
 }
 
+/*Background Styling */
 .menu {
     background-color: lightblue;
-    height: 1000px;
+    min-height: 1000px;
     padding: 20px 0 0 0;
 }
 
+
+/* Card Styling */
 .search__space {
     border-radius: 10px;
     margin: 10px 12.5px 10px 25px;
     padding: 20px;
-}
-
-.search__bar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .card-header {
@@ -56,26 +55,7 @@
     font-weight: 500;
  }
 
-.btn {
-    width: 20%;
-    height: 2.7rem;
-    border-radius: 10px;
-    background-color: white;
-    padding: 2px;
-}
-
-.search__history {
-    display: flex;
-    justify-content: space-around;
-    border-radius: 10px;
-    border: 2px solid orange;
-    margin: 10px;
-    width: 95%;
-    font-size: 25px;
-    background-color: #363636;
-    color:aliceblue
-}
-
+/* Picture and Fact Results Styling */
 .results {
     width: 100%;
     border-radius: 10px;
@@ -83,21 +63,28 @@
 }
 
 .pet-image {
-    display: flex;
+    /* display: flex;
+    align-items: center; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: auto;
     max-height: 650px; 
-    margin: 5px auto;
     border-radius: 15px;
 }
 
-
 .random-fact {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
     font-size: 30px;
     font-weight: bold; 
     text-align: center;
     color: #363636;
 }
 
+/* Button Click History Styling */
 .dog-search-history {
     background-color: #48C78E;
     color: white;
@@ -118,4 +105,47 @@
     font-weight: 400;
     text-align: center;
     border-radius: 10px;
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+
+@media screen and (max-width: 980px) {
+    
+    .title {
+        font-size: 6rem;
+        padding-bottom: 40px;
+    }
+
+
+    .random-fact {
+        font-size: 25px;
+    }
+
+    .pet-image {
+        max-width: 500px;
+    }
+}
+
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+
+@media screen and (max-width: 768px) {
+    
+    .title {
+        font-size: 4rem;
+        padding-bottom: 40px;
+    }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+
+@media screen and (max-width: 575px) {
+    
+    .pet-image {
+        max-width: 350px;
+    }
+
+    .card-header-title {
+        font-size: 20px;
+    }
 }
