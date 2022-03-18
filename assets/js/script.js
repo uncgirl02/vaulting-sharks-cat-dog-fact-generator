@@ -5,13 +5,14 @@ var catButton = document.querySelector("#cat-button")
 var dogButton = document.querySelector("#dog-button")
 var searchHistory = document.querySelector("#search-list")
 
-//function when cat button run fuctions
+
+//function when cat button is clicked, run functions
 var catButtonClick = function(event) {
     event.preventDefault();
     getCatFact();
     getCatPicture();
     catList();
-    // saveCat();
+    saveCat();
 }
 
 //fetch the cat fact
@@ -48,7 +49,7 @@ var displayCatPicture = function(picture) {
     petPicture.setAttribute("src", apiPicUrl)
 }
 
-// display "You picked cat!"
+// display "You learned a cat fact!"
 var catList = function () {
     var buttonName = document.createElement("p");
     buttonName.innerText = "You learned a cat fact!";
@@ -58,12 +59,14 @@ var catList = function () {
 
 //and save to local storage
 var saveCat = function () {
-        petArray = JSON.parse(localStorage.getItem("buttonName")) || []
+        petArray = JSON.parse(localStorage.getItem("petArray")) || [];
         console.log(petArray);
+        buttonName = document.createElement("p")
+        buttonName.innerText = "You learned a cat fact!";
         petArray.push(buttonName.innerText);
         localStorage.setItem("buttonName", JSON.stringify(petArray));
+              
 }
-
 
 //function when dog button is pressed random picture and fact is displayed
 var dogButtonClick = function(event) {
@@ -71,10 +74,10 @@ var dogButtonClick = function(event) {
     getDogFact();
     getDogPicture();
     dogList();
-    // savePet();
+    saveDog();
 }
 
-// display "You picked dog!"
+// display "You learned a dog fact!"
 var dogList = function () {
     var dogButtonName = document.createElement("p");
     dogButtonName.innerText = "You learned a dog fact!";
@@ -82,6 +85,15 @@ var dogList = function () {
     searchHistory.appendChild(dogButtonName);
 }
 
+//and save to local storage
+var saveDog = function () {
+    petArray = JSON.parse(localStorage.getItem("petArray")) || [];
+    console.log(petArray);
+    dogButtonName = document.createElement("p");
+    dogButtonName.innerText = "You learned a dog fact!";
+    petArray.push(dogButtonName.innerText);
+    localStorage.setItem("buttonName", JSON.stringify(petArray));
+}
 
 //fetch the dog fact
 var getDogFact = function() {
@@ -91,7 +103,6 @@ var getDogFact = function() {
     fetch(dogFactUrl).then(function (response) {
         response.json().then(function (data) {
           displayDogFact(data);
-          console.log(data)
         });
     });
 }
