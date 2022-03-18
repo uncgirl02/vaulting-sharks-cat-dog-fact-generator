@@ -86,11 +86,12 @@ var dogList = function () {
 //fetch the dog fact
 var getDogFact = function() {
     
-    var dogFactUrl = "https://dog-api.kinduff.com/api/facts?number=1";
-
+    var dogFactUrl = "https://api.allorigins.win/raw?url=https://dog-api.kinduff.com/api/facts?number=1";
+    
     fetch(dogFactUrl).then(function (response) {
         response.json().then(function (data) {
           displayDogFact(data);
+          console.log(data)
         });
     });
 }
