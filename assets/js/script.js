@@ -1,4 +1,3 @@
-var petArray = []
 var petPicture = document.querySelector(".pet-image");
 var factContainer = document.querySelector(".random-fact")
 var catButton = document.querySelector("#cat-button")
@@ -59,12 +58,12 @@ var catList = function () {
 
 //and save to local storage
 var saveCat = function () {
-        petArray = JSON.parse(localStorage.getItem("petArray")) || [];
+        var petArray = JSON.parse(localStorage.getItem("petArray")) || [];
         console.log(petArray);
         buttonName = document.createElement("p")
         buttonName.innerText = "You learned a cat fact!";
         petArray.push(buttonName.innerText);
-        localStorage.setItem("buttonName", JSON.stringify(petArray));
+        localStorage.setItem("petArray", JSON.stringify(petArray));
               
 }
 
@@ -92,7 +91,7 @@ var saveDog = function () {
     dogButtonName = document.createElement("p");
     dogButtonName.innerText = "You learned a dog fact!";
     petArray.push(dogButtonName.innerText);
-    localStorage.setItem("buttonName", JSON.stringify(petArray));
+    localStorage.setItem("petArray", JSON.stringify(petArray));
 }
 
 //fetch the dog fact
