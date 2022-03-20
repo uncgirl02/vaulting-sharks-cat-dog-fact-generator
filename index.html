@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Pet Facts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <section class="hero is-info">
+        <img id="dog" src="./assets/images/dog.png"></img>
+        <h1 class="title has-text-white" id="header">Learn Random Pet Facts!</h1>
+        <img id="cat" src="./assets/images/cat.png"></img>
+    </section>
+    <section class="menu columns">
+        <div class="column is-one-quarter search__space">
+            <div class="card">
+                <div class="card-header">  
+                    <h2 class="card-header-title">Please Choose Dog or Cat</h2>
+                </div>
+                <div class="card-content"> 
+                    <button id="cat-button" class="button is-info is-large column is-centered"><img id=cat-icon src="./assets/images/cat-icon.png"/>Cat</button>
+                    <button id="dog-button" class="button is-success is-large column is-centered"><img id=dog-icon src="./assets/images/dog-icon.png"/>Dog</button>
+                </div>
+            </div>
+            <div class="form-group" id="search-list">
+            </div>
+        </div>
+        <div class="results">
+            <div class="column search__image">
+                <img class="pet-image"></img>
+            </div>
+            <div class="is-warning facts-result">
+                <p class="random-fact column is-centered"></p>
+            </div>
+        </div>
+    </section>
+<script src="./assets/js/script.js"></script>
+</body>
+
+</html>
